@@ -9,12 +9,7 @@ const inputEl = document.querySelector('#search-box');
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
-countryList.style.listStyle = 'none';
-countryList.style.display = 'flex';
-countryList.style.flexDirection = 'column';
-countryList.style.paddingLeft = '0px';
-
-inputEl.addEventListener('input', debounce(searchByInput, DEBOUNCE_DELAY));
+inputEl.addEventListener('keyup', debounce(searchByInput, DEBOUNCE_DELAY));
 
 function searchByInput() {
   const searchCountries = inputEl.value.trim();
@@ -75,3 +70,8 @@ function clearAll() {
   countryInfo.innerHTML = '';
   countryList.innerHTML = '';
 }
+
+countryList.style.listStyle = 'none';
+countryList.style.display = 'flex';
+countryList.style.flexDirection = 'column';
+countryList.style.paddingLeft = '0px';
