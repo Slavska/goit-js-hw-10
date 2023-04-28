@@ -9,7 +9,7 @@ const inputEl = document.querySelector('#search-box');
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
-inputEl.addEventListener('keyup', debounce(searchByInput, DEBOUNCE_DELAY));
+inputEl.addEventListener('input', debounce(searchByInput, DEBOUNCE_DELAY));
 
 function searchByInput() {
   const searchCountries = inputEl.value.trim();
