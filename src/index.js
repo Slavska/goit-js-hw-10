@@ -43,7 +43,6 @@ function searchByInput() {
       Notify.failure('Oops, there is no country with that name');
       return;
     });
-  console.log(fetchCountries(searchCountries));
 }
 
 function findAll(countriesAll) {
