@@ -31,6 +31,7 @@ function searchByInput() {
         findAll(countries);
         return;
       }
+
       findOne(countries);
     })
     .catch(error => {
@@ -45,7 +46,9 @@ function findAll(countriesAll) {
   countryList.innerHTML = countriesAll
     .map(
       country =>
-        `<li style="display:flex; align-items:center;"><img src="${country.flags.svg}" alt="flag" width="30"><p style = "margin:10px;">${country.name.official}</p>
+        `<li style="display:flex; align-items:center;">
+        <img src="${country.flags.svg}" alt="flag" width="30">
+        <p style = "margin:10px;">${country.name.official}</p>
         </li>`
     )
     .join('');
@@ -54,15 +57,15 @@ function findAll(countriesAll) {
 function findOne(countryOne) {
   countryList.innerHTML = countryOne.map(
     country =>
-      `<li style="display:flex; align-items:center;"><img src="${country.flags.svg}" alt="flag" width="30"><p style="margin:10px; font-size:36px;font-weight:600">${country.name.official}</p></li>`
+      `<li style="display:flex; align-items:center;">
+      <img src="${country.flags.svg}" alt="flag" width="30">
+      <p style="margin:10px; font-size:36px;font-weight:600">${country.name.official}</p>
+      </li>`
   );
   countryInfo.innerHTML = countryOne.map(
     country => `<p><b>Capital:</b> ${country.capital}</p>
-<p><b>Population:</b> ${
-      country.population
-    }</p><p><b>Languages:</b> ${Object.values(country.languages).join(
-      ' , '
-    )}</p>`
+    <p><b>Population:</b> ${country.population}</p>
+    <p><b>Languages:</b> ${Object.values(country.languages).join(' , ')}</p>`
   );
 }
 
